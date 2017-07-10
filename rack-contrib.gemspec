@@ -1,16 +1,12 @@
-begin
-	require 'git-version-bump'
-rescue LoadError
-	nil
-end
+require "date"
 
 Gem::Specification.new do |s|
   s.specification_version = 2 if s.respond_to? :specification_version=
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
 
-  s.name    = 'rack-contrib'
-  s.version = GVB.version rescue "0.0.0.1.ENOGVB"
-  s.date    = GVB.date    rescue Time.now.strftime("%F")
+  s.name    = 'sharethebus-rack-contrib'
+  s.version = "20170710"
+  s.date    = Date.new(2017, 7, 10)
 
   s.licenses = ['MIT']
 
@@ -35,7 +31,6 @@ Gem::Specification.new do |s|
   # update `test/gemfiles/minimum_versions`!
   #
   s.add_runtime_dependency 'rack', '>= 1.4'
-  s.add_runtime_dependency 'git-version-bump', '~> 0.15'
 
   s.add_development_dependency 'bundler', '~> 1.0'
   s.add_development_dependency 'github-release', '~> 0.1'
